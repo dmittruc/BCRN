@@ -1,4 +1,5 @@
 import { Platform, StatusBar, StyleSheet } from 'react-native';
+import { Colors } from './src/theme/colors';
 
 let statusBarHeight = StatusBar.currentHeight;
 if (statusBarHeight === undefined || statusBarHeight === 0) {
@@ -8,11 +9,11 @@ if (statusBarHeight === undefined || statusBarHeight === 0) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'gray',
+    backgroundColor: Colors.gray5,
   },
   safeArea: {
     flex: 1,
-    backgroundColor: 'gray',
+    backgroundColor: Colors.gray5,
     paddingTop: Platform.OS === 'android' ? statusBarHeight : 0,
   },
 });

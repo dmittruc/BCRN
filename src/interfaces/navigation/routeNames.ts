@@ -3,6 +3,7 @@ export enum ERouteNames {
   SIGN_IN_SCREEN = 'SignInScreen',
   SIGN_UP_SCREEN = 'SignUpScreen',
   //Tabs
-
+  //App
+  MAIN_SCREEN = 'MainScreen',
   //Other
 }

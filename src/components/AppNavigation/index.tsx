@@ -1,16 +1,20 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { SafeAreaView, Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native';
 import useAuth from '../../hooks/useAuth';
 import { ERouteNames } from '../../interfaces/navigation/routeNames';
-import { AuthStackParamList } from '../../interfaces/navigation/routeParams';
+import {
+  AppStackParamList,
+  AuthStackParamList,
+} from '../../interfaces/navigation/routeParams';
+import MainScreen from '../../screens/MainScreen';
 import SignInScreen from '../../screens/SignInScreen';
 import SignUpScreen from '../../screens/SignUpScreen';
 import { navigationRef } from './RootNavigation';
 import styles from './styles';
 
 const AuthStack = createNativeStackNavigator<AuthStackParamList>();
-// const AppStack = createNativeStackNavigator<AppStackParamList>();
+const AppStack = createNativeStackNavigator<AppStackParamList>();
 
 const AppNavigation = () => {
   const { accessToken } = useAuth();
@@ -18,7 +22,7 @@ const AppNavigation = () => {
   return (
     <SafeAreaView style={styles.safeAreaContainer}>
       <NavigationContainer ref={navigationRef}>
-        {!accessToken ? (
+        {accessToken ? (
           <AuthStack.Navigator screenOptions={{ headerShown: false }}>
             <AuthStack.Screen
               name={ERouteNames.SIGN_IN_SCREEN}
@@ -30,9 +34,12 @@ const AppNavigation = () => {
             />
           </AuthStack.Navigator>
         ) : (
-          <View>
-            <Text>zxc</Text>
-          </View>
+          <AppStack.Navigator screenOptions={{ headerShown: false }}>
+            <AppStack.Screen
+              name={ERouteNames.MAIN_SCREEN}
+              component={MainScreen}
+            />
+          </AppStack.Navigator>
         )}
       </NavigationContainer>
     </SafeAreaView>

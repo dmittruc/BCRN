@@ -5,6 +5,8 @@ export type AuthStackParamList = {
   [ERouteNames.SIGN_UP_SCREEN]: undefined;
 };
 
-export type AppStackParamList = {};
+export type AppStackParamList = {
+  [ERouteNames.MAIN_SCREEN]: undefined;
+};
 
 export type TabsStackParamList = {};
