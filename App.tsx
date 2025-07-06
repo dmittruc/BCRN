@@ -5,24 +5,20 @@
  * @format
  */
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
+import { SafeAreaView } from 'react-native';
+import { Provider } from 'react-redux';
+import AppNavigation from './src/components/AppNavigation';
+import store from './src/store';
+import styles from './styles';
 
-function App() {
-  const isDarkMode = useColorScheme() === 'dark';
-
+const App = () => {
   return (
-    <View style={styles.container}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <NewAppScreen templateFileName="App.tsx" />
-    </View>
+    <SafeAreaView style={styles.safeArea}>
+      <Provider store={store}>
+        <AppNavigation />
+      </Provider>
+    </SafeAreaView>
   );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+};
 
 export default App;
