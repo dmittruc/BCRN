@@ -1,3 +1,4 @@
+import { NavigatorScreenParams } from '@react-navigation/native';
 import { ERouteNames } from './routeNames';
 
 export type AuthStackParamList = {
@@ -6,7 +7,12 @@ export type AuthStackParamList = {
 };
 
 export type AppStackParamList = {
+  [ERouteNames.TABS_SCREEN]: NavigatorScreenParams<TabsStackParamList>;
   [ERouteNames.MAIN_SCREEN]: undefined;
 };
 
-export type TabsStackParamList = {};
+export type TabsStackParamList = {
+  [ERouteNames.SHOP_SCREEN]: undefined;
+  [ERouteNames.MAP_SCREEN]: undefined;
+  [ERouteNames.SHOP_CART_SCREEN]: undefined;
+};

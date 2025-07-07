@@ -10,6 +10,7 @@ import {
 import MainScreen from '../../screens/MainScreen';
 import SignInScreen from '../../screens/SignInScreen';
 import SignUpScreen from '../../screens/SignUpScreen';
+import Tabs from '../Tabs';
 import { navigationRef } from './RootNavigation';
 import styles from './styles';
 
@@ -35,6 +36,7 @@ const AppNavigation = () => {
           </AuthStack.Navigator>
         ) : (
           <AppStack.Navigator screenOptions={{ headerShown: false }}>
+            <AppStack.Screen name={ERouteNames.TABS_SCREEN} component={Tabs} />
             <AppStack.Screen
               name={ERouteNames.MAIN_SCREEN}
               component={MainScreen}
