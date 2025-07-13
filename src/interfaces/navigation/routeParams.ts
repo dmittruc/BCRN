@@ -12,7 +12,7 @@ export type AppStackParamList = {
 };
 
 export type TabsStackParamList = {
-  [ERouteNames.SHOP_SCREEN]: undefined;
+  [ERouteNames.SEARCH_SCREEN]: undefined;
   [ERouteNames.MAP_SCREEN]: undefined;
   [ERouteNames.SHOP_CART_SCREEN]: undefined;
 };

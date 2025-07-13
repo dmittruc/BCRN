@@ -3,8 +3,8 @@ import React from 'react';
 import { ERouteNames } from '../../interfaces/navigation/routeNames';
 import { TabsStackParamList } from '../../interfaces/navigation/routeParams';
 import MapScreen from '../../screens/MapScreen';
+import SearchScreen from '../../screens/SearchScreen';
 import ShopCartScreen from '../../screens/ShopCartScreen';
-import ShopScreen from '../../screens/ShopScreen';
 
 const TabsStack = createBottomTabNavigator<TabsStackParamList>();
 
@@ -12,10 +12,10 @@ const Tabs = () => {
   return (
     <TabsStack.Navigator screenOptions={{ headerShown: false }}>
       <TabsStack.Screen
-        name={ERouteNames.SHOP_SCREEN}
-        component={ShopScreen}
+        name={ERouteNames.SEARCH_SCREEN}
+        component={SearchScreen}
         options={{
-          tabBarLabel: 'Shop',
+          tabBarLabel: 'Search',
         }}
       />
       <TabsStack.Screen
