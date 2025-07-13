@@ -1,9 +1,8 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-  safeAreaContainer: {
+  container: {
     flex: 1,
-    backgroundColor: 'red',
   },
 });
 

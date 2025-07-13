@@ -1,7 +1,7 @@
 import axiosInstance from './axios';
 
 export const signInApi = async (email: string, password: string) => {
-  const res = await axiosInstance.post('/auth/login', {
+  const res = await axiosInstance.post('/users/login', {
     email,
     password,
   });
@@ -13,7 +13,7 @@ export const signUpApi = async (
   name: string,
   password: string,
 ) => {
-  const res = await axiosInstance.post('/auth/register', {
+  const res = await axiosInstance.post('/users/registration', {
     email,
     name,
     password,
@@ -22,8 +22,9 @@ export const signUpApi = async (
 };
 
 export const logoutApi = async (refreshToken: string) => {
-  const res = await axiosInstance.post('/auth/logout', {
+  const res = await axiosInstance.post('/users/logout', {
     refreshToken,
   });
+
   return res.data;
 };

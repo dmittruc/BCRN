@@ -8,8 +8,10 @@ import {
   AuthStackParamList,
 } from '../../interfaces/navigation/routeParams';
 import MainScreen from '../../screens/MainScreen';
+import ProfileScreen from '../../screens/ProfileScreen';
 import SignInScreen from '../../screens/SignInScreen';
 import SignUpScreen from '../../screens/SignUpScreen';
+import CustomHeader from '../CustomHeader';
 import Tabs from '../Tabs';
 import { navigationRef } from './RootNavigation';
 import styles from './styles';
@@ -23,7 +25,7 @@ const AppNavigation = () => {
   return (
     <SafeAreaView style={styles.safeAreaContainer}>
       <NavigationContainer ref={navigationRef}>
-        {accessToken ? (
+        {!accessToken ? (
           <AuthStack.Navigator screenOptions={{ headerShown: false }}>
             <AuthStack.Screen
               name={ERouteNames.SIGN_IN_SCREEN}
@@ -35,11 +37,16 @@ const AppNavigation = () => {
             />
           </AuthStack.Navigator>
         ) : (
-          <AppStack.Navigator screenOptions={{ headerShown: false }}>
+          <AppStack.Navigator
+            screenOptions={{ header: () => <CustomHeader /> }}>
             <AppStack.Screen name={ERouteNames.TABS_SCREEN} component={Tabs} />
             <AppStack.Screen
               name={ERouteNames.MAIN_SCREEN}
               component={MainScreen}
+            />
+            <AppStack.Screen
+              name={ERouteNames.PROFILE_SCREEN}
+              component={ProfileScreen}
             />
           </AppStack.Navigator>
         )}

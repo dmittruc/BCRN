@@ -9,6 +9,7 @@ export type AuthStackParamList = {
 export type AppStackParamList = {
   [ERouteNames.TABS_SCREEN]: NavigatorScreenParams<TabsStackParamList>;
   [ERouteNames.MAIN_SCREEN]: undefined;
+  [ERouteNames.PROFILE_SCREEN]: undefined;
 };
 
 export type TabsStackParamList = {
