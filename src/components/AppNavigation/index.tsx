@@ -9,6 +9,7 @@ import {
 } from '../../interfaces/navigation/routeParams';
 import MainScreen from '../../screens/MainScreen';
 import ProfileScreen from '../../screens/ProfileScreen';
+import SearchResultsScreen from '../../screens/SearchResultScreen';
 import SignInScreen from '../../screens/SignInScreen';
 import SignUpScreen from '../../screens/SignUpScreen';
 import CustomHeader from '../CustomHeader';
@@ -45,8 +46,14 @@ const AppNavigation = () => {
               component={MainScreen}
             />
             <AppStack.Screen
+              options={{ header: () => <CustomHeader isGoBack /> }}
               name={ERouteNames.PROFILE_SCREEN}
               component={ProfileScreen}
+            />
+            <AppStack.Screen
+              options={{ header: () => <CustomHeader isGoBack /> }}
+              name={ERouteNames.SEARCH_RESULTS_SCREEN}
+              component={SearchResultsScreen}
             />
           </AppStack.Navigator>
         )}

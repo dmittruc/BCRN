@@ -9,6 +9,7 @@ export enum ERouteNames {
   PROFILE_SCREEN = 'ProfileScreen', //Профиль
   SHOP_CART_SCREEN = 'ShopCartScreen', // Корзина
   //App
-  MAIN_SCREEN = 'MainScreen',
+  MAIN_SCREEN = 'MainScreen', //Главная
+  SEARCH_RESULTS_SCREEN = 'SearchResultsScreen', // Результаты поиска
   //Other
 }

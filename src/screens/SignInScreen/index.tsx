@@ -15,8 +15,8 @@ import { AuthStackParamList } from '../../interfaces/navigation/routeParams';
 import styles from './styles';
 
 const SignInScreen = () => {
-  const [email, setEmail] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
+  const [email, setEmail] = useState<string>('email@gmail.com');
+  const [password, setPassword] = useState<string>('Password123');
 
   const { signIn } = useAuth();
 

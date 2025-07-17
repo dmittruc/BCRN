@@ -10,6 +10,10 @@ export type AppStackParamList = {
   [ERouteNames.TABS_SCREEN]: NavigatorScreenParams<TabsStackParamList>;
   [ERouteNames.MAIN_SCREEN]: undefined;
   [ERouteNames.PROFILE_SCREEN]: undefined;
+  [ERouteNames.SEARCH_RESULTS_SCREEN]: {
+    category?: string;
+    inputSearch?: string; // this screen can take an optional category or inputSearch parameter
+  };
 };
 
 export type TabsStackParamList = {
