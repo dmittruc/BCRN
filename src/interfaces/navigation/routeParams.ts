@@ -11,7 +11,7 @@ export type AppStackParamList = {
   [ERouteNames.MAIN_SCREEN]: undefined;
   [ERouteNames.PROFILE_SCREEN]: undefined;
   [ERouteNames.SEARCH_RESULTS_SCREEN]: {
-    category?: string;
+    category: string;
     inputSearch?: string; // this screen can take an optional category or inputSearch parameter
   };
 };

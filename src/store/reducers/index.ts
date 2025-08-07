@@ -2,6 +2,7 @@ import { combineReducers } from '@reduxjs/toolkit';
 import MMKVStorage from 'react-native-mmkv-storage';
 import { persistReducer } from 'redux-persist';
 import authReducer from './authReducer';
+import productsReducer from './searchProductsReducer';
 
 const MMKV = new MMKVStorage.Loader().initialize();
 
@@ -16,6 +17,7 @@ const authPersistConfig = {
 
 const rootReducer = combineReducers({
   auth: persistReducer(authPersistConfig, authReducer),
+  products: productsReducer,
 });
 
 export default rootReducer;

@@ -1,8 +1,12 @@
-interface BaseProduct {
-  id: string;
+export type TCategory = 'liquids' | 'devices' | 'parts' | 'disposables';
+
+export interface IBaseProduct {
+  id: number;
   name: string;
-  price?: number;
+  description: string;
+  price: number;
+  category: TCategory;
   image?: string;
 }
 
-interface LiquidProduct extends BaseProduct {}
+export interface LiquidProduct extends IBaseProduct {}
