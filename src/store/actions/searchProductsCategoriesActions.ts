@@ -27,6 +27,7 @@ export const getSearchProductsCategoriesAsyncAction = createAsyncThunk<
   'products/getSearchProductsCategoriesAsyncAction',
   async ({ category }: ISearchProductsCategoriesAsyncAction, { dispatch }) => {
     try {
+      dispatch(setSearchProductsCategoriesAction({ products: null }));
       dispatch(setLoadingAction({ loading: true }));
       const res = await getProductsCategories(category);
       const products = res.products;

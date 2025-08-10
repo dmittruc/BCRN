@@ -9,7 +9,7 @@ export const searchProductsApi = async (productName: string) => {
 };
 
 export const getProductsCategories = async (category: TCategory) => {
-  console.log('getProductsCategories called with category:', category);
+  console.log('Отправляю запрос:', `/products/category/${category}`);
   const res = await axiosInstance.get(`/products/category/${category}`);
   return res.data;
 };

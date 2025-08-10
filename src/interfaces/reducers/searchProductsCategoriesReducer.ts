@@ -1,7 +1,7 @@
 import { IBaseProduct } from '..';
 
 export interface IProductsCategoriesReducerState {
-  products: IBaseProduct[];
+  products: IBaseProduct[] | [];
   error: any;
   loading: boolean;
 }

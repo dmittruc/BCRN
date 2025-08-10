@@ -7,10 +7,9 @@ import { getSearchProductsCategoriesAsyncAction } from '../store/actions/searchP
 const useProducts = () => {
   const dispatch = useDispatch<TAppDispatch>();
 
-  const productsCategories = useSelector<
-    TRootState,
-    IBaseProduct[] | undefined
-  >((state: TRootState) => state.products.products);
+  const products = useSelector<TRootState, IBaseProduct[] | undefined>(
+    (state: TRootState) => state.products.products,
+  );
 
   const loading = useSelector<TRootState, boolean>(
     (state: TRootState) => state.products.loading,
@@ -25,7 +24,7 @@ const useProducts = () => {
   }, []);
 
   return {
-    productsCategories,
+    products,
     loading,
     error,
     getProductsCategories,

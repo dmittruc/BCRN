@@ -1,7 +1,7 @@
 import { IBaseProduct, TCategory } from '..';
 
 export interface ISetSearchProductsCategoriesAction {
-  products: IBaseProduct[];
+  products: IBaseProduct[] | null;
 }
 
 export interface ISetLoadingAction {

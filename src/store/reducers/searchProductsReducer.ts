@@ -19,7 +19,7 @@ const productsReducer = createReducer<IProductsCategoriesReducerState>(
         setSearchProductsCategoriesAction,
         (store, { payload: { products } }) => ({
           ...store,
-          products: products,
+          products: products || [],
         }),
       )
       .addCase(setErrorAction, (store, { payload: { error } }) => ({
